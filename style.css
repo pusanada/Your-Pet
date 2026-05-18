@@ -485,16 +485,22 @@ h1 {
 
 @media (max-width: 760px) {
     body {
-        padding: calc(env(safe-area-inset-top) + 16px) 8px 8px;
+        min-height: 100svh;
+        padding: calc(env(safe-area-inset-top) + 44px) 8px 12px;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     .game {
-        min-height: calc(100vh - env(safe-area-inset-top) - 24px);
+        min-height: calc(100svh - env(safe-area-inset-top) - 56px);
+        overflow: visible;
     }
 
     .pet-stage {
-        height: calc(100vh - env(safe-area-inset-top) - 24px);
-        grid-template-rows: 66px auto 1fr auto auto auto;
+        height: auto;
+        min-height: calc(100svh - env(safe-area-inset-top) - 56px);
+        grid-template-rows: 66px auto minmax(260px, 1fr) auto auto auto;
+        overflow: visible;
     }
 
     .top-row {
@@ -522,13 +528,14 @@ h1 {
     }
 
     .pet-shell {
-        width: min(68vw, 340px);
-        max-height: 42vh;
+        width: min(66vw, 300px);
+        max-height: none;
         max-width: none;
     }
 
     .pet-wrap {
-        padding-bottom: 26px;
+        padding: 8px 12px 22px;
+        transform: none;
     }
 
     .actions button {
