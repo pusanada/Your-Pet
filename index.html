@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Little Pet</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <main class="game">
+        <section id="overlay" class="overlay">
+            <form id="nameForm" class="name-box">
+                <h2>Name Your Pet</h2>
+                <input type="text" id="nameInput" placeholder="Pet name" maxlength="18" autocomplete="off" required>
+                <button type="submit">OK</button>
+            </form>
+        </section>
+
+        <section class="pet-stage" aria-live="polite">
+            <div class="top-row">
+                <button class="icon-btn menu-btn" type="button" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <h1 id="petName">Your Pet</h1>
+                <div class="right-info">
+                    <button class="icon-btn gear-btn" type="button" aria-label="Settings"></button>
+                </div>
+            </div>
+
+            <div class="hud-row">
+                <aside class="status-panel" aria-label="Pet status">
+                    <div class="status-title">status</div>
+                    <div class="stat">
+                        <span>eat</span>
+                        <div class="bar"><div id="eatBar" class="bar-fill eat-fill"></div></div>
+                        <strong id="eatValue">80</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>sleep</span>
+                        <div class="bar"><div id="sleepBar" class="bar-fill sleep-fill"></div></div>
+                        <strong id="sleepValue">80</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>toilet</span>
+                        <div class="bar"><div id="toiletBar" class="bar-fill toilet-fill"></div></div>
+                        <strong id="toiletValue">0</strong>
+                    </div>
+                </aside>
+
+                <div class="day-sound">
+                    <span id="dayCounter">stack day 1</span>
+                    <button id="soundBtn" class="sound-btn" type="button" aria-label="Mute or unmute music">
+                        <span class="speaker-box"></span>
+                        <span class="speaker-cone"></span>
+                        <span class="speaker-wave"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="pet-wrap">
+                <div class="pet-shell breathe" id="petShell" role="button" tabindex="0" aria-label="Play with your pet">
+                    <img class="pet-base" src="image/egg.png" alt="">
+                    <img id="petImage" class="pet-action" src="image/begin.png" alt="Your pet">
+                </div>
+            </div>
+
+            <p id="message" class="message">Enter your pet name to begin.</p>
+
+            <div class="actions" aria-label="Pet actions">
+                <button type="button" data-action="eat">Feed</button>
+                <button type="button" data-action="sleep">Sleep</button>
+                <button type="button" data-action="toilet">Poop</button>
+            </div>
+
+            <footer class="credit">
+                Project by Pusanada · Inspired by Tamagotchi game
+            </footer>
+        </section>
+    </main>
+
+    <audio id="music" src="sound/Kevin%20MacLeod%20-%20Itty%20Bitty%208%20Bit%20%E2%99%AB%20NO%20COPYRIGHT%208-bit%20Music.mp3" loop></audio>
+    <audio id="clickSound" src="sound/BUBBLE%20POP%20SOUND%20EFFECT%20-%20FREE.mp3"></audio>
+</body>
+</html>
